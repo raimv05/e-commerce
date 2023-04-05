@@ -1,3 +1,4 @@
+//SIMPLE NAVBAR
 // import React from "react";
 // import { Link } from "react-router-dom";
 // import Navbar from "react-bootstrap/Navbar";
@@ -23,6 +24,8 @@
 
 // export default NavigationBar;
 
+
+//NAVBAR WITH BOOTSTRAP
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
