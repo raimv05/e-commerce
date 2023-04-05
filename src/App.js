@@ -1,27 +1,29 @@
-import "./App.css";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./Header";
+import Home from "./Home";
 import Login from "./Login";
-import Register from "./Register";
-import AddProduct from "./AddProduct";
-import UpdateProduct from "./UpdateProduct";
+import Navbar from "./Navbar";
 
-function App() {
+const App = () => {
+  const [userData, setUserData] = useState({ name: "", username: "" });
+
+  const handleLogin = (name, username) => {
+    setUserData({ name, username });
+  };
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Header />
-
-        <Routes>
-          <Route path="/" element={<h1>Welcome to My App!</h1>} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/add" element={<AddProduct />} />
-          <Route path="/update" element={<UpdateProduct />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={<Home name={userData.name} username={userData.username} />}
+        />
+        <Route path="/login" element={<Login handleLogin={handleLogin} />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
