@@ -10,6 +10,12 @@
 
 //       <Nav>
 //         <Link to="/login">Login</Link>
+// <Link to="/add" className="nav-link">
+// Add Product
+// </Link>
+// <Link to="/update" className="nav-link">
+// Update Product
+// </Link>
 //       </Nav>
 //     </Navbar>
 //   );
@@ -31,6 +37,12 @@ const NavigationBar = () => {
         </Link>
         <Link to="/login" className="nav-link ml-3">
           Login
+        </Link>
+        <Link to="/add" className="nav-link">
+          Add Product
+        </Link>
+        <Link to="/update" className="nav-link">
+          Update Product
         </Link>
       </Nav>
     </Navbar>
